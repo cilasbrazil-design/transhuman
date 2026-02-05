@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TTRANSHUMAN.ART</title>
-
-  <!-- ESSENCIAL para mobile -->
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <title>transhuman.art</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     html, body {
@@ -14,38 +12,40 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: black;
+      background: #000;
     }
 
     iframe {
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       border: none;
+    }
+
+    .fallback {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 30vh;
     }
   </style>
 </head>
-
 <body>
 
 <iframe
-  id="wix"
   src="https://ocilento3.wixsite.com/storm-network"
+  loading="eager"
   allowfullscreen
-  loading="eager">
-</iframe>
+></iframe>
 
-<script>
-  setTimeout(() => {
-    try {
-      const iframe = document.getElementById("wix");
-      if (!iframe.contentDocument) {
-        window.location.replace("https://ocilento3.wixsite.com/storm-network");
-      }
-    } catch (e) {
-      window.location.replace("https://ocilento3.wixsite.com/storm-network");
-    }
-  }, 1500);
-</script>
+<noscript>
+  <div class="fallback">
+    JavaScript is required to view this site.
+  </div>
+</noscript>
 
 </body>
 </html>
